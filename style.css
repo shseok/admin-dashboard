@@ -35,6 +35,11 @@ body{
     overflow: hidden;
 }
 
+.navigation.active{
+    /* transform: translateX(-300px); */
+    width: 80px;
+}
+
 .navigation ul{
     position: absolute;
     top: 0;
@@ -129,4 +134,359 @@ body{
     border-radius: 50%;
     box-shadow: 35px -35px 0 10px var(--white);
     pointer-events: none;
+}
+
+/* main */
+.main{
+    position: absolute;
+    left: 300px;
+    width: calc(100% - 300px);
+    height: 40px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+    /* border:1px solid red; */
+}
+
+.main.active{
+    left: 80px;
+    width: calc(100% - 80px);
+}
+
+.topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search{
+    
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    /* border:1px solid red; */
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline:none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon{
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 1.2em;
+}
+
+.user{
+    position: relative;
+      width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.cardBox .card{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.cardBox .card:hover{
+    transform: scale(0.9);
+    background: var(--blue);
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--blue);
+}
+
+.cardBox .card .cardName{
+    color: var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBx{
+    font-size: 2em;
+    color: var(--black2);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .iconBx,
+.cardBox .card:hover .cardName{
+    color: var(--white);
+}
+
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    /* margin-top: 10px; */
+}
+
+.details .recentStatus{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.details .cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: 1px solid red; */
+}
+
+.details .cardHeader h2{
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.details .cardHeader .btn{
+    background: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.details table{
+    width: 100%;
+    border-collapse:collapse;
+    margin-top: 10px;
+}
+
+.details table thead td{
+    font-weight: 600;
+}
+
+.details table tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.details table tr:last-child{
+    border-bottom: none;
+}
+
+.details table tbody tr:hover{
+    background: var(--blue);
+    color:var(--white);
+}
+
+.details table tr td{
+    padding: 10px;
+}
+
+.details table tr td:last-child{
+    text-align: end;
+}
+
+.details table tr td:nth-child(2){
+    text-align: end;
+}
+
+.details table tr td:nth-child(3){
+    text-align: center;
+}
+
+.status.mylang{
+    background: #f9ca3f;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.notExperienced{
+    background: rgb(253, 93, 93);
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.experienced{
+    background: rgb(105, 255, 113);
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentFollowers{
+    position:relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.recentFollowers .imgBx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.recentFollowers .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recentFollowers table tr:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
+.recentFollowers table tr td:last-child{
+    text-align: start;
+}
+
+.recentFollowers table tr td{
+    padding: 12px 10px;
+}
+
+.recentFollowers table tr h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.recentFollowers table tr h4 span{
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.recentFollowers table tr:hover td h4 span{
+    color:var(--white);
+}
+
+/* 반응형 작업*/
+@media screen and (max-width: 991px) {
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        width: 300px;
+        left: 0;
+    }
+    .main{
+        width: 100%;
+        left:0;
+    }
+    .main.active{
+        left: 300px;
+    }
+    .cardBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .details{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .recentStatus{
+        overflow-x:auto;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .cardBox{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cardHeader h2{
+        font-size: 20px;
+    }
+    .user{
+        min-width: 40px;
+    }
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle{
+        z-index: 9999;
+    }
+    .main.active .toggle{
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: #fff;
+    }
 }
