@@ -271,6 +271,14 @@ body{
     color: var(--white);
 }
 
+.cardBox .card:nth-child(2):hover .iconBx ion-icon{
+    color: rgb(105, 255, 113);
+}
+
+.cardBox .card:nth-child(3):hover .iconBx ion-icon{
+    color:rgb(253, 93, 93);
+}
+
 .details{
     position: relative;
     width: 100%;
