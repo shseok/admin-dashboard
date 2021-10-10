@@ -154,6 +154,7 @@ body{
 }
 
 .topbar{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -278,7 +279,27 @@ body{
 .cardBox .card:nth-child(3):hover .iconBx ion-icon{
     color:rgb(253, 93, 93);
 }
+/* chart */
+.graphBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
 
+.graphBox .box{
+    position: relative;
+    display: grid;
+    min-height: 200px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+/* details */
 .details{
     position: relative;
     width: 100%;
@@ -441,6 +462,10 @@ body{
 
 /* 반응형 작업*/
 @media screen and (max-width: 991px) {
+    .graphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
     .navigation{
         left: -300px;
     }
@@ -482,19 +507,19 @@ body{
     .navigation{
         width: 100%;
         left: -100%;
-        z-index: 1000;
+        z-index: 100;
     }
     .navigation.active{
         width: 100%;
         left: 0;
     }
     .toggle{
-        z-index: 9999;
+        z-index: 200;
     }
     .main.active .toggle{
+        color: var(--white);
         position: fixed;
-        right: 0;
+        right: 1;
         left: initial;
-        color: #fff;
     }
 }
